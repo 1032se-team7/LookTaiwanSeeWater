@@ -3,185 +3,267 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <!-- Facebook Meta Tag -->
-    <meta property="fb:app_id" content="922617771095082" />
-    <meta property="og:title" content="LookTaiwan SeeWater - 1032_Software Engineering of NCCU"/>
-    <meta property="og:url" content="http://1032se-team7.github.io/LookTaiwanSeeWater/">
-    <meta property="og:image" content="http://1032se-team7.github.io/LookTaiwanSeeWater/img/bg.jpg"/>
-    <meta property="og:site_name" content="LookTaiwan SeeWater - 1032_Software Engineering of NCCU"/>
-    <meta property="og:description" content="We are team7 from 1032_Software Engineering of NCCU. Our purpose of project is to assist citizens in focusing on Water resource of reservoir in Taiwan"/>
+	<!-- Facebook Meta Tag -->
+	<meta property="fb:app_id" content="894467023928574" />
+	<meta property="og:title" content="LookTaiwan SeeWater - 1032_Software Engineering of NCCU"/>
+	<meta property="og:url" content="http://1032se-team7.github.io/LookTaiwanSeeWater/">
+	<meta property="og:image" content="http://vipl.noip.me:10080/image.png" width="25%"/>
+	<meta property="og:site_name" content="LookTaiwan SeeWater - 1032_Software Engineering of NCCU"/>
+	<meta property="og:description" content="We are team7 from 1032_Software Engineering of NCCU. Our purpose of project is to assist citizens in focusing on Water resource of reservoir in Taiwan"/>
 
-    <title>LookTaiwan SeeWater - 1032_Software Engineering of NCCU</title>
+	<title>LookTaiwan SeeWater - 1032_Software Engineering of NCCU</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
-    <link href="css/full-slider.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="css/stylish-portfolio.css" rel="stylesheet">
+	<link href="css/full-slider.css" rel="stylesheet">
+	<link href="css/trendChart.css" rel="stylesheet">
+	<link href="http://vipl.noip.me:10080/css/mycss.css" rel="stylesheet" type="text/css" />
+	<!-- Custom Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Parse Core JavaScript -->
-    <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!-- Parse Core JavaScript -->
+	<script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+	<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+        <!-- (google)將這個標記放在標頭中，或放在內文結尾標記前面。 -->
+        <script src="https://apis.google.com/js/platform.js" async defer>
+        	{lang: 'zh-TW'}
+        </script>
+        <link rel="shortcut icon"  type="image/x-icon" href="http://vipl.noip.me:10080/icon/favicon.ico">
+        <link rel="icon" href="http://vipl.noip.me:10080/icon/favicon.ico" type="image/ico" />
     </head>
 
     <body>
-        <!-- Setup the Facebook SDK for JavaScript -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=922617771095082";
-          fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+    	<!-- Setup the Facebook SDK for JavaScript -->
+    	<div id="fb-root"></div>
+    	<script>(function(d, s, id) {
+    		var js, fjs = d.getElementsByTagName(s)[0];
+    		if (d.getElementById(id)) return;
+    		js = d.createElement(s); js.id = id;
+    		js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=894467023928574";
+    		fjs.parentNode.insertBefore(js, fjs);
+    	}(document, 'script', 'facebook-jssdk'));
     </script>
 
 
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top"  onclick ="$('#menu-close').click();" >LookTaiwan SeeWater</a>
-            </li>
-            <li>
-                <a href="#top" onclick = "$('#menu-close').click();" >首頁</a>
-            </li>
-            <li>
-                <a href="#myCarousel" onclick = "$('#menu-close').click();" >看見水庫</a>
-            </li>
-            <li>
-                <a href="#reservoir" onclick = "$('#menu-close').click();" >咱們瞧瞧各水庫存量</a>
-            </li>
-            <li>
-                <a href="#services" onclick = "$('#menu-close').click();" >進一步水服務</a>
-            </li>
-            <li>
-                <a href="#videos" onclick = "$('#menu-close').click();" >夠水影片</a>
-            </li>
-            <li>
-                <a href="#portfolio" onclick = "$('#menu-close').click();" >Hackathon歷程</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = "$('#menu-close').click();" >聯絡我們</a>
-            </li>
-        </ul>
+    	<ul class="sidebar-nav">
+    		<a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+    		<li class="sidebar-brand">
+    			<a href="#top"  onclick ="$('#menu-close').click();" >LookTaiwan SeeWater</a>
+    		</li>
+    		<li>
+    			<a href="#top" onclick = "$('#menu-close').click();" >首頁</a>
+    		</li>
+    		<li>
+    			<a href="#myCarousel" onclick = "$('#menu-close').click();" >看見水庫</a>
+    		</li>
+    		<li>
+    			<a href="#reservoir" onclick = "$('#menu-close').click();" >咱們瞧瞧各水庫存量</a>
+    		</li>
+    		<li>
+    			<a href="#services" onclick = "$('#menu-close').click();" >進一步水服務</a>
+    		</li>
+    		<li>
+    			<a href="#videos" onclick = "$('#menu-close').click();" >夠水影片</a>
+    		</li>
+    		<li>
+    			<a href="#portfolio" onclick = "$('#menu-close').click();" >Hackathon歷程</a>
+    		</li>
+    		<li>
+    			<a href="#contact" onclick = "$('#menu-close').click();" >聯絡我們</a>
+    		</li>
+    	</ul>
     </nav>
 
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center">
-            <!-- <h1>LookTaiwan SeeWater</h1> -->
-            <!--We are team7 from 1032_Software Engineering of NCCU<br>-->
-            <!-- <h3>Our purpose of Hackathon is to assist citizens in focusing on Water resource of reservoir in Taiwan</h3> -->
-            <!-- <br> -->
-            <img src="img/logo7.gif" alt="LTSW" width="25%">
-        </div>
+    	<div class="text-vertical-center">
+    		<!-- <h1>LookTaiwan SeeWater</h1> -->
+    		<!--We are team7 from 1032_Software Engineering of NCCU<br>-->
+    		<!-- <h3>Our purpose of Hackathon is to assist citizens in focusing on Water resource of reservoir in Taiwan</h3> -->
+    		<!-- <br> -->
+    		<img src="img/logo7.gif" alt="LTSW" width="25%">
+    	</div>
     </header>
 
     <!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-            <li data-target="#myCarousel" data-slide-to="6"></li>
-        </ol>
+<!--    <header id="myCarousel" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
+		<li data-target="#myCarousel" data-slide-to="5"></li>
+		<li data-target="#myCarousel" data-slide-to="6"></li>
+	</ol>
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/FeiCui.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>翡翠水庫</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/PingLinXi.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>坪林溪</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/GongLiaoShuangXi.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>貢寮雙溪</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/RenYiTan.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>仁義潭</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/MingDe.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>明德水庫</h2>
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/水足跡.jpg');height:100%;background-size:contain;background-repeat:no-repeat;"></div>
-                <div class="carousel-caption">
+	<!-- Wrapper for Slides -->
+	<!--        <div class="carousel-inner">-->
+	<!--            <div class="item active">-->
+	<!-- Set the first background image using inline CSS below.-->
+	<!--                <div class="fill" style="background-image:url('img/FeiCui.jpg');"></div>-->
+	<!--                <div class="carousel-caption">-->
+	<!--                    <h2>翡翠水庫</h2>-->
+	<!--                </div>-->
+	<!--            </div>-->
+	<!--            <div class="item">-->
+	<!-- Set the second background image using inline CSS below.-->
+	<!--                <div class="fill" style="background-image:url('img/PingLinXi.jpg');"></div>-->
+	<!--                <div class="carousel-caption">-->
+	<!--                    <h2>坪林溪</h2>-->
+	<!--                </div>-->
+	<!--            </div>-->
+	<!--            <div class="item">-->
+	<!-- Set the third background image using inline CSS below.-->
+	<!--                <div class="fill" style="background-image:url('img/GongLiaoShuangXi.jpg');"></div>-->
+	<!--                <div class="carousel-caption">-->
+	<!--                    <h2>貢寮雙溪</h2>-->
+	<!--                </div>-->
+	<!--            </div>-->
+	<!--            <div class="item">-->
+	<!-- Set the third background image using inline CSS below.-->
+	<!--                <div class="fill" style="background-image:url('img/RenYiTan.jpg');"></div>-->
+	<!--                <div class="carousel-caption">-->
+	<!--                    <h2>仁義潭</h2>-->
+	<!--                </div>-->
+	<!--            </div>-->
+	<!--            <div class="item">-->
+	<!-- Set the third background image using inline CSS below.-->
+	<!--                <div class="fill" style="background-image:url('img/MingDe.jpg');"></div>-->
+	<!--                <div class="carousel-caption">-->
+	<!--                    <h2>明德水庫</h2>-->
+	<!--                </div>-->
+	<!--            </div>-->
+	<!--            <div class="item">-->
+	<!-- Set the third background image using inline CSS below.-->
+	<!--                <div class="fill" style="background-image:url('img/水足跡.jpg');height:100%;background-size:contain;background-repeat:no-repeat;"></div>-->
+	<!--                <div class="carousel-caption">-->
+	<!---->
+	<!--                </div>-->
+	<!--            </div>-->
+	<!--            <div class="item">-->
+	<!-- Set the third background image using inline CSS below.-->
+	<!--                <div class="fill" style="background-image:url('img/食物水足跡.jpg');height:100%;background-size:contain;background-repeat:no-repeat;"></div>-->
+	<!--                <div class="carousel-caption">-->
+	<!---->
+	<!--                </div>-->
+	<!--            </div>-->
+	<!--        </div>-->
 
-                </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/食物水足跡.jpg');height:100%;background-size:contain;background-repeat:no-repeat;"></div>
-                <div class="carousel-caption">
+	<!-- Controls -->
+	<!--        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">-->
+	<!--            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+	<!--            <span class="sr-only">Previous</span>-->
+	<!--        </a>-->
+	<!--        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">-->
+	<!--            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+	<!--            <span class="sr-only">Next</span>-->
+	<!--        </a>-->
+	<!-- </header> -->
+	<!-- Weather -->
+	<section>
 
-                </div>
-            </div>
-        </div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-6">
+					<!-- Large button group -->
+					<div class="btn-group">
+						<button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+							<p id="my_city"></p> <span class="caret"></span>
+						</button>
+						<ul id="dropdown" class="dropdown-menu" role="menu">  
+							<li role="presentation"><a role="menuitem" tabindex="-1" >臺北市</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >新北市</a></li> 
+							<li role="presentation"><a role="menuitem" tabindex="-1" >台中市</a></li> 
+							<li role="presentation"><a role="menuitem" tabindex="-1" >臺南市</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >高雄市</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >基隆市</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >桃園市</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >新竹市</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >新竹縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >苗栗縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >彰化縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >南投縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >雲林縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >嘉義市</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >嘉義縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >屏東縣</a></li> 
+							<li role="presentation"><a role="menuitem" tabindex="-1" >宜蘭縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >花蓮縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >台東縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >澎湖縣</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >金門縣</a></li> 
+							<li role="presentation"><a role="menuitem" tabindex="-1" >連江縣</a></li>
+						</ul>
+					</div>
+					<div><span class="temperature"><span id="today_temp"> </span></span> &#8451;</div>
+				</div>
+				<div class="col-xs-6">
+					<canvas id="today" width="100" height="100"></canvas>
+					<div class="condition">
+						<span class="date"><span id = "today_date"></span></span> <span id = "today_weather"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-default">
+						<!-- Default panel contents -->
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+						<!-- Table -->
+						<!--            <table class="table">-->
+						<!--              <thead>-->
+						<!--                <tr>-->
+						<!--                  <th id="one"></th>-->
+						<!--                  <th id="two"></th>-->
+						<!--                  <th id="three"></th>-->
+						<!--                </tr>-->
+						<!--              </thead>-->
+						<!--              <tbody>-->
+						<!--                <tr>-->
+						<!--                  <td> <span id="one_low"></span> - <span id="one_high"></span>&#8451;</td>-->
+						<!--                  <td> <span id="two_low"></span> - <span id="two_high"></span>&#8451;</td>-->
+						<!--                  <td> <span id="three_low"></span> - <span id="three_high"></span>&#8451;</td>-->
+						<!--                </tr>-->
+						<!--                <tr>-->
+						<!--                  <td><canvas id="day1" width="64" height="64">Clear</canvas></td>-->
+						<!--                  <td><canvas id="day2" width="64" height="64">Mostly Sunny</canvas></td>-->
+						<!--                  <td><canvas id="day3" width="64" height="64">Mostly Cloudy</canvas></td>-->
+						<!--                </tr>-->
+						<!--              </tbody>-->
+						<!--            </table>-->
+					</div>
+				</div>
+			</div>
+		</div>
 
-    </header>
-
-    <!-- Reservoir -->
-    <section id="reservoir" class="about">
-        <div class="container">
-            <div class="text-center col-lg-12">
-                <h2>咱們瞧瞧各水庫存量</h2>
-                <hr class="small">
+	</section>
+	<!-- Reservoir -->
+	<section id="reservoir" class="about">
+		<div class="container">
+			<div class="text-center col-lg-12">
+				<h2>咱們瞧瞧各水庫存量</h2>
+				<hr class="small">
             <!--
                 <div class="col-lg-12 text-center">
                     <h2>Introduction to LookTaiwanSeeWater Team</h2>
@@ -189,472 +271,491 @@
                 </div>
             -->
             <nav class="row">
-                <ul class="nav nav-tabs">
-                  <li class="active"><a href="#tab_a" data-toggle="tab">北台灣</a></li>
-                  <li><a href="#tab_b" data-toggle="tab">中台灣</a></li>
-                  <li><a href="#tab_c" data-toggle="tab">南台灣</a></li>
-                  <li><a class="normalclass" href="#tab_d" data-toggle="tab">正常(Volume>70%)</a></li>
-                  <li><a class="warningclass" href="#tab_e" data-toggle="tab">警告(70%>Volume>30%)</a></li>
-                  <li><a class="dangerclass" href="#tab_f" data-toggle="tab">嚴重(Volume<30%)</a></li>
-              </ul>
-          </nav>
+            	<ul class="nav nav-tabs">
+            		<li class="active"><a href="#tab_a" data-toggle="tab">北台灣</a></li>
+            		<li><a href="#tab_b" data-toggle="tab">中台灣</a></li>
+            		<li><a href="#tab_c" data-toggle="tab">南台灣</a></li>
+            		<li><a class="normalclass" href="#tab_d" data-toggle="tab">正常(Volume>70%)</a></li>
+            		<li><a class="warningclass" href="#tab_e" data-toggle="tab">警告(70%>Volume>30%)</a></li>
+            		<li><a class="dangerclass" href="#tab_f" data-toggle="tab">嚴重(Volume<30%)</a></li>
+            	</ul>
+            </nav>
 
-          <div class="row tab-content">
-            <div class="tab-pane fade active" id="tab_a">
-                <br><br>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge0" height="200"></svg>
-                    <h4><strong>石門水庫(新北、桃園、新竹)</strong></h4>
-                    <!--<h4 id="demo"><strong></strong></h4>-->
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge1" height="200"></svg>
-                    <h4><strong>翡翠水庫(台北、新北)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge2" height="200"></svg>
-                    <h4><strong>寶山第二水庫(新竹)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge3" height="200"></svg>
-                    <h4><strong>永和山水庫(新竹、苗栗)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge4" height="200"></svg>
-                    <h4><strong>明德水庫(苗栗)</strong></h4>
-                </div>
-            </div>
-            <div class="tab-pane fade active" id="tab_b">
-                <br><br>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge5" height="200"></svg>
-                    <h4><strong>鯉魚潭水庫(苗栗、台中)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge6" height="200"></svg>
-                    <h4><strong>德基水庫(台中)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge7" height="200"></svg>
-                    <h4><strong>石岡壩(台中)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge8" height="200"></svg>
-                    <h4><strong>霧社水庫(南投)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge9" height="200"></svg>
-                    <h4><strong>日月潭水庫(南投)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge10" height="200"></svg>
-                    <h4><strong>集集攔河堰(南投)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge11" height="200"></svg>
-                    <h4><strong>仁義潭水庫(嘉義)</strong></h4>
-                </div>
-            </div>
-            <div class="tab-pane fade active" id="tab_c">
-                <br><br>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge12" height="200"></svg>
-                    <h4><strong>白河水庫(台南)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge13" height="200"></svg>
-                    <h4><strong>烏山頭水庫(台南)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge14" height="200"></svg>
-                    <h4><strong>曾文水庫(嘉義、台南)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge15" height="200"></svg>
-                    <h4><strong>南化水庫(台南、高雄)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge16" height="200"></svg>
-                    <h4><strong>阿公店水庫(高雄)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge17" height="200"></svg>
-                    <h4><strong>高屏溪攔河堰(高雄)</strong></h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <svg id="fillgauge18" height="200"></svg>
-                    <h4><strong>牡丹水庫(屏東)</strong></h4>
-                </div>
-            </div>
-            <div class="tab-pane fade active" id="tab_d">
-                <br><br>
+            <div class="row tab-content">
+            	<div class="tab-pane fade active" id="tab_a">
+            		<br><br>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge0" height="200"></svg>
+            			<h4><strong>石門水庫(新北、桃園、新竹)</strong></h4>
+            			<!--<h4 id="demo"><strong></strong></h4>-->
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge1" height="200"></svg>
+            			<h4><strong>翡翠水庫(台北、新北)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge2" height="200"></svg>
+            			<h4><strong>寶山第二水庫(新竹)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge3" height="200"></svg>
+            			<h4><strong>永和山水庫(新竹、苗栗)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge4" height="200"></svg>
+            			<h4><strong>明德水庫(苗栗)</strong></h4>
+            		</div>
+            	</div>
+            	<div class="tab-pane fade active" id="tab_b">
+            		<br><br>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge5" height="200"></svg>
+            			<h4><strong>鯉魚潭水庫(苗栗、台中)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge6" height="200"></svg>
+            			<h4><strong>德基水庫(台中)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge7" height="200"></svg>
+            			<h4><strong>石岡壩(台中)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge8" height="200"></svg>
+            			<h4><strong>霧社水庫(南投)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge9" height="200"></svg>
+            			<h4><strong>日月潭水庫(南投)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge10" height="200"></svg>
+            			<h4><strong>集集攔河堰(南投)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge11" height="200"></svg>
+            			<h4><strong>仁義潭水庫(嘉義)</strong></h4>
+            		</div>
+            	</div>
+            	<div class="tab-pane fade active" id="tab_c">
+            		<br><br>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge12" height="200"></svg>
+            			<h4><strong>白河水庫(台南)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge13" height="200"></svg>
+            			<h4><strong>烏山頭水庫(台南)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge14" height="200"></svg>
+            			<h4><strong>曾文水庫(嘉義、台南)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge15" height="200"></svg>
+            			<h4><strong>南化水庫(台南、高雄)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge16" height="200"></svg>
+            			<h4><strong>阿公店水庫(高雄)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge17" height="200"></svg>
+            			<h4><strong>高屏溪攔河堰(高雄)</strong></h4>
+            		</div>
+            		<div class="col-md-3 col-sm-6">
+            			<svg id="fillgauge18" height="200"></svg>
+            			<h4><strong>牡丹水庫(屏東)</strong></h4>
+            		</div>
+            	</div>
+            	<div class="tab-pane fade active" id="tab_d">
+            		<br><br>
 
-            </div>
-            <div class="tab-pane fade active" id="tab_e">
-                <br><br>
+            	</div>
+            	<div class="tab-pane fade active" id="tab_e">
+            		<br><br>
 
-            </div>
-            <div class="tab-pane fade active" id="tab_f">
-                <br><br>
+            	</div>
+            	<div class="tab-pane fade active" id="tab_f">
+            		<br><br>
 
-            </div>
-        </div><!-- tab content -->
-    </div><!-- end of row -->
-</div><!-- /.container -->
+            	</div>
+            </div><!-- tab content -->
+        </div><!-- end of row -->
+    </div><!-- /.container -->
 </section>
 
 <!-- Services -->
 <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
 <section id="services" class="services bg-primary">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-lg-10 col-lg-offset-1">
-                <h2>進一步水服務</h2>
-                <hr class="small">
-                <div class="row">
-                    <div class="col-xs-6">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-lg-10 col-lg-offset-1">
+				<h2>進一步水服務</h2>
+				<hr class="small">
+				<div class="row">
+					<div class="col-xs-6">
 
-                        <div class="service-item">
+						<div class="service-item">
 
-                            <input class="form-control" id = "waterConsumption" value = "0" />
-                            <label>用水量(度)</label>
+							<input class="form-control" id = "waterConsumption" value = "0" />
+							<label>用水量(度)</label>
 
-                            <select id = "TPMeterSize" class="form-control">
-                                <option value = "17" >13</option>
-                                <option value = "68" >20</option>
-                                <option value = "126" >25</option>
-                                <option value = "374" >40</option>
-                                <option value = "680" >50</option>
-                                <option value = "1836" >75</option>
-                                <option value = "3638" >100</option>
-                                <option value = "10098" >150</option>
-                                <option value = "20060" >200</option>
-                                <option value = "35428" >250</option>
-                                <option value = "55590" >300up</option>
-                            </select>
-                            <label>水表口徑(mm)</label>
-                            <br/><br>
-                            <button class="btn btn-danger" onclick = "TaipeiWaterFee()">水費試算</button><br/><br/>
-                            <label id = "TPWaterFee" style="font-size:24px"></label><label>元</label>
-                        </div>
-                    </div>
+							<select id = "TPMeterSize" class="form-control">
+								<option value = "17" >13</option>
+								<option value = "68" >20</option>
+								<option value = "126" >25</option>
+								<option value = "374" >40</option>
+								<option value = "680" >50</option>
+								<option value = "1836" >75</option>
+								<option value = "3638" >100</option>
+								<option value = "10098" >150</option>
+								<option value = "20060" >200</option>
+								<option value = "35428" >250</option>
+								<option value = "55590" >300up</option>
+							</select>
+							<label>水表口徑(mm)</label>
+							<br/><br>
+							<button class="btn btn-danger" onclick = "TaipeiWaterFee()">水費試算</button><br/><br/>
+							<label id = "TPWaterFee" style="font-size:24px"></label><label>元</label>
+						</div>
+					</div>
 
-                    <div class="col-xs-6">
-                        <div class="service-item">
-                            <select id="selectReservoir" class="form-control"></select>
-                            <label>目前蓄水量可供</label>
-                            <select id="mySelect" class="form-control">  </select>
-                            <label id="restDays"></label>
-                            <label>天的民生用水</label>
-                            <br/><br/>
-                            <label>有效蓄水量(萬立方公尺)</label>
-                            <label id="immediateStorage"></label>
-                            <label>生活用水總量(噸)：</label>
-                            <label id="domesticConsumption"></label>
-                            <label>用水人口：</label>
-                            <label id="PopulationServed"></label>
-                            <label>每人每日生活用水量(公升)：</label>
-                            <label id="dailyDomesticConsumptionOfWaterPerPerson"></label>
+					<div class="col-xs-6">
+						<div class="service-item">
+							<select id="selectReservoir" class="form-control"></select>
+							<label>目前蓄水量可供</label>
+							<select id="mySelect" class="form-control">  </select>
+							<label id="restDays"></label>
+							<label>天的民生用水</label>
+							<br/><br/>
+							<label>有效蓄水量(萬立方公尺)</label>
+							<label id="immediateStorage"></label>
+							<label>生活用水總量(噸)：</label>
+							<label id="domesticConsumption"></label>
+							<label>用水人口：</label>
+							<label id="PopulationServed"></label>
+							<label>每人每日生活用水量(公升)：</label>
+							<label id="dailyDomesticConsumptionOfWaterPerPerson"></label>
 
-                            <br/>
-                            <label>以上計算利用2013年用水量以及生活用水占用水比例18%，對即時水庫蓄水量做估算</label>
-                        </div>
-                    </div>
+							<br/>
+							<label>以上計算利用2013年用水量以及生活用水占用水比例18%，對即時水庫蓄水量做估算</label>
+						</div>
+					</div>
 
-                </div>
-                <!-- /.row (nested) -->
-            </div>
-            <!-- /.col-lg-10 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
+				</div>
+				<!-- /.row (nested) -->
+			</div>
+			<!-- /.col-lg-10 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
 </section>
 
 
 <!-- Subscribe -->
 <section id="subcribe" class="subscribe bg-info">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-lg-10 col-lg-offset-1">
-                <h2>訂閱你所關注的水庫</h2>
-                <hr class="small">
-                <div class="row">
-                    <div class="col-xs-12">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-lg-10 col-lg-offset-1">
+				<h2>訂閱你所關注的水庫</h2>
+				<hr class="small">
+				<div class="row">
+					<div class="col-xs-12">
 
-                      <!--This form is signUpForm -->
-                      <form id="signUpForm" class="form-horizontal">
-                      <fieldset>
+						<!--This form is signUpForm -->
+						<form id="signUpForm" class="form-horizontal">
+							<fieldset>
 
-                      <!-- Form Name -->
-                      <legend>註冊</legend>
+								<!-- Form Name -->
+								<legend>註冊</legend>
 
-                      <!-- Text input-->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="usernamesignUp">username*</label>
-                        <div class="col-md-4">
-                        <input id="usernamesignUp" name="username" type="text" placeholder="username" class="form-control input-md" required="">
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="usernamesignUp">username*</label>
+									<div class="col-md-4">
+										<input id="usernamesignUp" name="username" type="text" placeholder="username" class="form-control input-md" required="">
 
-                        </div>
-                      </div>
+									</div>
+								</div>
 
-                      <!-- Text input-->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="emailsignUp">email*</label>
-                        <div class="col-md-4">
-                        <input id="emailsignUp" name="email" type="text" placeholder="email" class="form-control input-md" required="">
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="emailsignUp">email*</label>
+									<div class="col-md-4">
+										<input id="emailsignUp" name="email" type="text" placeholder="email" class="form-control input-md" required="">
 
-                        </div>
-                      </div>
+									</div>
+								</div>
 
-                      <!-- Password input-->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="passwordsignUp">password*</label>
-                        <div class="col-md-4">
-                          <input id="passwordsignUp" name="password" type="password" placeholder="password" class="form-control input-md" required="">
+								<!-- Password input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="passwordsignUp">password*</label>
+									<div class="col-md-4">
+										<input id="passwordsignUp" name="password" type="password" placeholder="password" class="form-control input-md" required="">
 
-                        </div>
-                      </div>
+									</div>
+								</div>
 
-                      <!-- Role -->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="">角色*</label>
-                        <div class="col-md-4">
-                          <label class="radio-inline" for="-0">
-                            <input type="radio" name="role" id="-0" value="teacher" >
-                            管理者
-                          </label>
-                          <label class="radio-inline" for="-1">
-                            <input type="radio" name="role" id="-1" value="student" checked="checked">
-                            訂閱者
-                          </label>
-                        </div>
-                      </div>
+								<!-- Role -->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="">角色*</label>
+									<div class="col-md-4">
+										<label class="radio-inline" for="-0">
+											<input type="radio" name="role" id="-0" value="teacher" >
+											管理者
+										</label>
+										<label class="radio-inline" for="-1">
+											<input type="radio" name="role" id="-1" value="student" checked="checked">
+											訂閱者
+										</label>
+									</div>
+								</div>
 
-                      <!-- Button -->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="signUpBtn"></label>
-                        <div class="col-md-4">
-                          <button id="signUpBtn" name="signUpBtn" class="btn btn-primary">註冊</button>
-                          <!-- <a class="btn" href="logIn.html">前往登入</a> -->
-                          <a class="btnTologIn" class="btn">前往登入</a>
-                        </div>
-                      </div>
-                      </fieldset>
-                      </form>
+								<!-- Button -->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="signUpBtn"></label>
+									<div class="col-md-4">
+										<button id="signUpBtn" name="signUpBtn" class="btn btn-primary">註冊</button>
+										<!-- <a class="btn" href="logIn.html">前往登入</a> -->
+										<a class="btnTologIn" class="btn">前往登入</a>
+									</div>
+								</div>
+							</fieldset>
+						</form>
 
-                      <!--This form is logInForm -->
-                      <form id="logInForm" class="form-horizontal">
-                      <fieldset>
+						<!--This form is logInForm -->
+						<form id="logInForm" class="form-horizontal">
+							<fieldset>
 
-                      <!-- Form Name -->
-                      <legend>登入</legend>
+								<!-- Form Name -->
+								<legend>登入</legend>
 
-                      <!-- Text input-->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="usernamelogIn">使用者名稱</label>
-                        <div class="col-md-4">
-                        <input id="usernamelogIn" name="username" type="text" placeholder="username" class="form-control input-md" required="">
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="usernamelogIn">使用者名稱</label>
+									<div class="col-md-4">
+										<input id="usernamelogIn" name="username" type="text" placeholder="username" class="form-control input-md" required="">
 
-                        </div>
-                      </div>
+									</div>
+								</div>
 
-                      <!-- Password input-->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="passwordlogIn">使用者密碼</label>
-                        <div class="col-md-4">
-                          <input id="passwordlogIn" name="password" type="password" placeholder="password" class="form-control input-md" required="">
+								<!-- Password input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="passwordlogIn">使用者密碼</label>
+									<div class="col-md-4">
+										<input id="passwordlogIn" name="password" type="password" placeholder="password" class="form-control input-md" required="">
 
-                        </div>
-                      </div>
+									</div>
+								</div>
 
-                      <!-- Button -->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="logInBtn"></label>
-                        <div class="col-md-4">
-                          <button id="logInBtn" name="logInBtn" class="btn btn-primary">登入</button>
-                          <a class="btnTosignUp" class="btn">前往註冊</a>
-                        </div>
-                      </div>
-                      </fieldset>
-                      </form>
+								<!-- Button -->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="logInBtn"></label>
+									<div class="col-md-4">
+										<button id="logInBtn" name="logInBtn" class="btn btn-primary">登入</button>
+										<a class="btnTosignUp" class="btn">前往註冊</a>
+									</div>
+								</div>
+							</fieldset>
+						</form>
 
-                      <h3 id="logAttend">你是已經簽到的：<span id="name"></span></h3>
-                      <div id="logOut" class="btn btn-danger">登出</div>
+						<h3 id="logAttend">你是已經簽到的：<span id="name"></span></h3>
+						<div id="logOut" class="btn btn-danger">登出</div>
 
-                      <div class="reservoir-table">
-                        <table id="table" class="table table-hover">
-                          <h3>您已訂閱的水庫列表</h3>
+						<div class="reservoir-table">
+							<table id="table" class="table table-hover">
+								<h3>您已訂閱的水庫列表</h3>
 
-                        </table>
-                      </div>
-                      <div class="reservoir-input">
-                        <label class="res0 btn btn-success" for="res0">
-                          <input id="res0" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 石門水庫(新北、桃園、新竹)
-                        </label>
-                        <label class="res1 btn btn-primary" for="res1">
-                          <input id="res1" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 翡翠水庫(台北、新北)
-                        </label>
-                        <label class="res2 btn btn-info" for="res2">
-                          <input id="res2" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 寶山第二水庫(新竹)
-                        </label>
-                        <label class="res3 btn btn-warning" for="res3">
-                          <input id="res3" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 永和山水庫(新竹、苗栗)
-                        </label>
-                        <label class="res4 btn btn-danger" for="res4">
-                          <input id="res4" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 明德水庫(苗栗)
-                        </label>
-                        <label class="res5 btn btn-primary" for="res5">
-                          <input id="res5" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 鯉魚潭水庫(苗栗、台中)
-                        </label>
-                        <label class="res6 btn btn-info" for="res6">
-                          <input id="res6" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 德基水庫(台中)
-                        </label>
-                        <label class="res7 btn btn-success" for="res7">
-                          <input id="res7" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 石岡壩(台中)
-                        </label>
-                        <label class="res8 btn btn-danger" for="res8">
-                          <input id="res8" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 霧社水庫
-                        </label>
-                        <label class="res9 btn btn-warning" for="res9">
-                          <input id="res9" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 日月潭水庫
-                        </label>
-                      </div>
+							</table>
+						</div>
+						<div class="reservoir-input">
+							<label class="res0 btn btn-success" for="res0">
+								<input id="res0" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 石門水庫(新北、桃園、新竹)
+							</label>
+							<label class="res1 btn btn-primary" for="res1">
+								<input id="res1" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 翡翠水庫(台北、新北)
+							</label>
+							<label class="res2 btn btn-info" for="res2">
+								<input id="res2" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 寶山第二水庫(新竹)
+							</label>
+							<label class="res3 btn btn-warning" for="res3">
+								<input id="res3" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 永和山水庫(新竹、苗栗)
+							</label>
+							<label class="res4 btn btn-danger" for="res4">
+								<input id="res4" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 明德水庫(苗栗)
+							</label>
+							<label class="res5 btn btn-primary" for="res5">
+								<input id="res5" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 鯉魚潭水庫(苗栗、台中)
+							</label>
+							<label class="res6 btn btn-info" for="res6">
+								<input id="res6" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 德基水庫(台中)
+							</label>
+							<label class="res7 btn btn-success" for="res7">
+								<input id="res7" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 石岡壩(台中)
+							</label>
+							<label class="res8 btn btn-danger" for="res8">
+								<input id="res8" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 霧社水庫
+							</label>
+							<label class="res9 btn btn-warning" for="res9">
+								<input id="res9" type="checkbox" name="reservoir-checkbox" autocomplete="off"> 日月潭水庫
+							</label>
+						</div>
 
-                      <div id="updateSubscribe" class="btn btn-success"><h4>更新訂閱</h4></div>
+						<div id="updateSubscribe" class="btn btn-success"><h4>更新訂閱</h4></div>
 
-                    </div>
+					</div>
 
-                <!-- /.row (nested) -->
-                </div>
-            <!-- /.col-lg-10 -->
-            </div>
-        <!-- /.row -->
-        </div>
-    <!-- /.container -->
-    </div>
+					<!-- /.row (nested) -->
+				</div>
+				<!-- /.col-lg-10 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+	</div>
 </section>
 
 
 <!-- Callout -->
 <aside id="videos" class="callout">
-    <div class="text-vertical-center">
-        <h1>夠水影片</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIaw5mCjHPI" frameborder="0" allowfullscreen></iframe>
-    </div>
+	<div class="text-vertical-center">
+		<h1>夠水影片</h1>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/VIaw5mCjHPI" frameborder="0" allowfullscreen></iframe>
+	</div>
 </aside>
 
 <!-- Portfolio -->
 <section id="portfolio" class="portfolio">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h2>Hackathon歷程</h2>
-                <hr class="small">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/1.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/2.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/3.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/4.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/5.jpg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row (nested) -->
-                <a href="#" class="btn btn-dark">View More Items</a>
-            </div>
-            <!-- /.col-lg-10 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 text-center">
+				<h2>Team Member</h2>
+				<hr class="small">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="portfolio-item">
+							<a href="#">
+								<img class="img-portfolio img-responsive" height="150" width="150" src="img/11.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="portfolio-item">
+							<a href="#">
+								<img class="img-portfolio img-responsive" sheight="150" width="150" src="img/22.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="portfolio-item">
+							<a href="#">
+								<img class="img-portfolio img-responsive" height="150" width="150" src="img/33.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="portfolio-item">
+							<a href="#">
+								<img class="img-portfolio img-responsive" height="150" width="150" src="img/44.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="portfolio-item">
+							<a href="#">
+								<img class="img-portfolio img-responsive" height="150" width="150" src="img/55.jpg">
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- /.row (nested) -->
+			</div>
+			<!-- /.col-lg-10 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
 </section>
 
 <!-- Call to Action -->
 <aside class="call-to-action bg-primary">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3>The more relevant resource of Internet is on below:</h3>
-                <a target="_blank" href="http://www.wra.gov.tw" class="btn btn-lg btn-light">經濟部水利署</a>
-                <a target="_blank" href="http://water.taiwanstat.com" class="btn btn-lg btn-dark">用數據看台灣</a>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h3>The more relevant resource of Internet is on below:</h3>
+				<a target="_blank" href="http://www.wra.gov.tw" class="btn btn-lg btn-light">經濟部水利署</a>
+				<a target="_blank" href="http://water.taiwanstat.com" class="btn btn-lg btn-dark">用數據看台灣</a>
+			</div>
+		</div>
+	</div>
 </aside>
 <!-- Map -->
 <section id="contact" class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.409318398306!2d121.57470574337773!3d24.986203825846083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa79452c2f49%3A0x9e8d07508e3bf507!2z5pS_5rK75aSn5a24!5e0!3m2!1sen!2stw!4v1431745238501" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-    <!--<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>-->
-    <br />
-    <small>
-        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-    </small>
-</iframe>
+	<select id="trendChoose" onchange="trendChoose($('#trendChoose').val())" >
+		<option value="0">石門水庫</option>
+		<option value="1">翡翠水庫</option>
+		<option value="2">寶山第二水庫</option>
+		<option value="3">永和山水庫</option>
+		<option value="4">明德水庫</option>
+		<option value="5">鯉魚潭水庫</option>
+		<option value="6">德基水庫</option>
+		<option value="7">石岡壩</option>
+		<option value="8">霧社水庫</option>
+		<option value="9">日月潭水庫</option>
+		<option value="10">集集攔河堰</option>
+		<option value="11">仁義潭水庫</option>
+		<option value="12">白河水庫</option>
+		<option value="13">烏山頭水庫</option>
+		<option value="14">曾文水庫</option>
+		<option value="15">南化水庫</option>
+		<option value="16">阿公店水庫</option>
+		<option value="17">牡丹水庫</option>
+	</select>
+	<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.409318398306!2d121.57470574337773!3d24.986203825846083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa79452c2f49%3A0x9e8d07508e3bf507!2z5pS_5rK75aSn5a24!5e0!3m2!1sen!2stw!4v1431745238501" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> -->
+	<!--<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>-->
+	<!-- <br /> -->
+	<small>
+		<a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+	</small>
+	<div class="trendChart"></div>
 </section>
 
 <!-- Footer -->
 <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h2>聯絡我們</h2>
-                <hr class="small">
-                <h4><strong>LookTaiwanSeeWater</strong>
-                </h4>
-                <p>National Chengchi University<br>NO.64,Sec.2,ZhiNan Rd.,Wenshan District,Taipei City 11605,Taiwan (R.O.C)</p>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                    <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:1032se.team7@gmail.com">1032se.team7@gmail.com</a>
-                    </li>
-                </ul>
-                <br>
-                <ul class="list-inline">
-                    <li>
-                        <a href="https://www.facebook.com/groups/817680821620324/"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                    </li>
-                </ul>
-                <div class="fb-like" data-href="http://1032se-team7.github.io/LookTaiwanSeeWater/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-                <hr class="small">
-                <p class="text-muted">Copyright &copy; LookTaiwanSeeWater Website 2015</p>
-                <p class="text-muted">Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the Apache 2.0 license.</p>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 text-center">
+				<h2>聯絡我們</h2>
+				<hr class="small">
+				<h4><strong>LookTaiwanSeeWater</strong>
+				</h4>
+				<p>National Chengchi University<br>NO.64,Sec.2,ZhiNan Rd.,Wenshan District,Taipei City 11605,Taiwan (R.O.C)</p>
+				<ul class="list-unstyled">
+					<li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+					<li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:1032se.team7@gmail.com">1032se.team7@gmail.com</a>
+					</li>
+				</ul>
+				<br>
+				<ul class="list-inline">
+					<li>
+						<a id="FB_share" class="fa fa-facebook fa-fw fa-3x"></a>
+					</li>
+					<li>
+						<a href="https://plus.google.com/share?url={http://vipl.noip.me:10080/Water}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="fa fa-google-plus fa-fw fa-3x"></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+					</li>
+				</ul>
+				<!--                 <div class="fb-like" data-href="http://eric848976.ddns.net:8888/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div> -->
+				<hr class="small">
+				<p class="text-muted">Copyright &copy; LookTaiwanSeeWater Website 2015</p>
+				<p class="text-muted">Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the Apache 2.0 license.</p>
+			</div>
+		</div>
+	</div>
 </footer>
 
 <!-- jQuery -->
@@ -670,16 +771,18 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="js/liquidFillGauge.js"></script>
 <script src="js/waterFee.js"></script>
+
 <script src="js/trendChart.js"></script>
+
 
 <!--引入初始化 Parse 的 js 檔案-->
 <script type="text/javascript" src="js/key.js"></script>
 <!-- <script type="text/javascript" src="js/email.js"></script> -->
 <script type="text/javascript">
 
-  $(document).on('submit','#signUpForm',function(e){
+	$(document).on('submit','#signUpForm',function(e){
 
-    console.log('signUp submit');
+		console.log('signUp submit');
       e.preventDefault();  // 避免 form submit 完成後 轉址
       var user = new Parse.User();
       user.set("username", $('#usernamesignUp').val());
@@ -689,24 +792,24 @@
 
       user.signUp(null,{
         success : function(user){     // 註冊成功後會執行的 callback
-          console.log(user);
-          alert("你已註冊成功，恭喜！");
-          window.location="index.html";
+        	console.log(user);
+        	alert("你已註冊成功，恭喜！");
+        	window.location="index.html";
           return null //避免程式繼續
-        },
+      },
         error : function(course, error){ // 註冊失敗後會執行的 callback
-          console.log('error', error.message) ;
-          alert(error.message);
+        	console.log('error', error.message) ;
+        	alert(error.message);
         }
       });//endof signUp
   });  //endof signUpBtn onSubmit
 </script>
 <script type="text/javascript">
 
-  $(document).on('submit','#logInForm',function(e){
+	$(document).on('submit','#logInForm',function(e){
 
-    console.log('logIn submit');
-    /* 請閱讀完 html 後在這裡填入送出表單後需要執行的程式碼 */
+		console.log('logIn submit');
+		/* 請閱讀完 html 後在這裡填入送出表單後需要執行的程式碼 */
 
       // 提示1 : 記得使用 preventDefault 方程 避免表單轉址
       e.preventDefault();  // 避免 form submit 完成後 轉址
@@ -718,17 +821,17 @@
       console.log("登入之前的 Parse.User.current() :", Parse.User.current());
 
       Parse.User.logIn(username, password, {
-       success: function(user) {
+      	success: function(user) {
          // 到 console 看看 Parse.User.current()  的東西
-          var currentUser = Parse.User.current();
-          console.log("登入之後的 Parse.User.current() :", currentUser);
-          $('form#logInForm').hide();
-          $('div#logOut').show();
-          $('div.reservoir-table').show();
-          $('div.reservoir-input').show();
-          $('h3#logAttend').show();
-          $('span#name').text(currentUser.get("username"));
-          $('div#updateSubscribe').show();
+         var currentUser = Parse.User.current();
+         console.log("登入之後的 Parse.User.current() :", currentUser);
+         $('form#logInForm').hide();
+         $('div#logOut').show();
+         $('div.reservoir-table').show();
+         $('div.reservoir-input').show();
+         $('h3#logAttend').show();
+         $('span#name').text(currentUser.get("username"));
+         $('div#updateSubscribe').show();
 
 
           // 提示3 : 簽到成功後，要將畫面切換到 index 頁面
@@ -740,13 +843,13 @@
           query.equalTo("username", currentUser.get("username")); //Query Parse data for 'username column' is equal to currentUser.get("username")
 
           query.find({
-            success: function(UserReservoir){
-              $.ajax({
-                  type: "GET",
-                  url: "/data",
-                  dataType: "json",
-                  success: function (data) {
-                      var reservoirData = data.data;
+          	success: function(UserReservoir){
+          		$.ajax({
+          			type: "GET",
+          			url: "/data",
+          			dataType: "json",
+          			success: function (data) {
+          				var reservoirData = data.data;
 
                       // for (var i = 0; i < reservoirData.length; i++) {
                       //     var percentage = percentage || [];
@@ -758,26 +861,26 @@
                       // }
                       var forappend = "<tr><td>水庫名稱</td><td>水庫目前有效蓄水量(萬立方公尺)</td><td>水庫目前蓄水量百分比(%)</td><td>水情更新時間</td></tr>";
                       for(var i=0; i<10; i++){
-                          if(UserReservoir[0].get('res'+i)==="true"){
-                            forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+"</th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
-                          }
+                      	if(UserReservoir[0].get('res'+i)==="true"){
+                      		forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+"</th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
+                      	}
 
                       }
                       $('table.table').html(forappend);
                   }
               });
-            },
-            error: function(error){
-              console.log(error);
-              alert(error.message);
-            }
-          });
-          return null;
-      },
-      error:function(user,error){
-        console.log('login error',error);
-        alert('您輸入的使用者名稱或密碼有誤！');
-      }
+},
+error: function(error){
+	console.log(error);
+	alert(error.message);
+}
+});
+return null;
+},
+error:function(user,error){
+	console.log('login error',error);
+	alert('您輸入的使用者名稱或密碼有誤！');
+}
 
       });//endof login
   });//endof logInBtn onSubmit
@@ -785,34 +888,34 @@
 <script type="text/javascript">
 
 //Reload index.html page
-  $(document).ready(function() {
-    $('form#signUpForm').hide();
+$(document).ready(function() {
+	$('form#signUpForm').hide();
 
     // var currentUser = Parse.User.current();
     // if (currentUser) {
-      Parse.User.logOut();
-      console.log('logout current: ', Parse.User.current());
-      $('div.reservoir-table').hide();
-      $('div.reservoir-input').hide();
-      $('h3#logAttend').hide();
-      $('div#logOut').hide();
-      $('div#updateSubscribe').hide();
+    	Parse.User.logOut();
+    	console.log('logout current: ', Parse.User.current());
+    	$('div.reservoir-table').hide();
+    	$('div.reservoir-input').hide();
+    	$('h3#logAttend').hide();
+    	$('div#logOut').hide();
+    	$('div#updateSubscribe').hide();
     // }
-  });
+});
 
 //Logout user account
-  $(document).on('click',"div#logOut",function(){
-    console.log("Logout clicked");
-    /* 執行登出動作，並轉址到 logIn 頁面*/
+$(document).on('click',"div#logOut",function(){
+	console.log("Logout clicked");
+	/* 執行登出動作，並轉址到 logIn 頁面*/
     // 可參考 : https://parse.com/docs/js/guide#users-current-user
     Parse.User.logOut(); //此為Parse進行登出的語法
     window.location = "index.html";
     return null;
     /* 結束 */
-  });
+});
 //Update user's subscribe list
-  $(document).on('click',"div#updateSubscribe",function(){
-    console.log("Update your subscribe");
+$(document).on('click',"div#updateSubscribe",function(){
+	console.log("Update your subscribe");
 
     // 提示2 : 請在使用者登入成功後，自動幫助使用者簽到
     var currentUser = Parse.User.current();
@@ -822,46 +925,46 @@
     query.equalTo("username", currentUser.get("username")); //Query Parse data for 'username column' is equal to currentUser.get("username")
 
     query.find({
-      success: function(result) {
+    	success: function(result) {
             // if (result.length == 0) {
             //   //Not Found
-              Parse.Object.destroyAll(result);
-              var SignReservoir = Parse.Object.extend("SignReservoir");
-              var newReservoir = new SignReservoir();
+            Parse.Object.destroyAll(result);
+            var SignReservoir = Parse.Object.extend("SignReservoir");
+            var newReservoir = new SignReservoir();
 
-              newReservoir.set("username", currentUser.get("username"));
-              for(var i=0; i<10; i++){
-                var string1="input#res";
-                var string2="res";
-                if($(string1+i).prop("checked"))
-                  newReservoir.set(string2+i, "true");
-                else
-                  newReservoir.set(string2+i, "false");
-              }
+            newReservoir.set("username", currentUser.get("username"));
+            for(var i=0; i<10; i++){
+            	var string1="input#res";
+            	var string2="res";
+            	if($(string1+i).prop("checked"))
+            		newReservoir.set(string2+i, "true");
+            	else
+            		newReservoir.set(string2+i, "false");
+            }
 
-              newReservoir.save(null, {
-                success: function(attend) {
-                  console.log('reservoir signed');
-                },
-                error: function(attend, error) {
-                  alert(error);
-                  console.log('reservoir error', error.message);
-                }
-              });
+            newReservoir.save(null, {
+            	success: function(attend) {
+            		console.log('reservoir signed');
+            	},
+            	error: function(attend, error) {
+            		alert(error);
+            		console.log('reservoir error', error.message);
+            	}
+            });
 
-              var SignReservoir = Parse.Object.extend("SignReservoir");
-              var query = new Parse.Query(SignReservoir);
+            var SignReservoir = Parse.Object.extend("SignReservoir");
+            var query = new Parse.Query(SignReservoir);
 
               query.equalTo("username", currentUser.get("username")); //Query Parse data for 'username column' is equal to currentUser.get("username")
 
               query.find({
-                success: function(UserReservoir){
-                  $.ajax({
-                      type: "GET",
-                      url: "/data",
-                      dataType: "json",
-                      success: function (data) {
-                          var reservoirData = data.data;
+              	success: function(UserReservoir){
+              		$.ajax({
+              			type: "GET",
+              			url: "/data",
+              			dataType: "json",
+              			success: function (data) {
+              				var reservoirData = data.data;
 
                           // for (var i = 0; i < reservoirData.length; i++) {
                           //     var percentage = percentage || [];
@@ -873,20 +976,20 @@
                           // }
                           var forappend = "<tr><td>水庫名稱</td><td>水庫目前有效蓄水量(萬立方公尺)</td><td>水庫目前蓄水量百分比(%)</td><td>水情更新時間</td></tr>";
                           for(var i=0; i<10; i++){
-                              if(UserReservoir[0].get('res'+i)==="true"){
-                                forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+"</th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
-                              }
+                          	if(UserReservoir[0].get('res'+i)==="true"){
+                          		forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+"</th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
+                          	}
 
                           }
                           $('table.table').html(forappend);
                       }
                   });
-                },
-                error: function(error){
-                  console.log(error);
-                  alert(error.message);
-                }
-              });
+},
+error: function(error){
+	console.log(error);
+	alert(error.message);
+}
+});
             // }
             // else{
             //   //Found
@@ -914,34 +1017,224 @@
             //     }
             //   });
             // }
-      },
-      error: function(error) {
-            alert(error);
-            console.log('error', error.message);
-      }
+        },
+        error: function(error) {
+        	alert(error);
+        	console.log('error', error.message);
+        }
     });
-    /* 結束 */
-  });
+/* 結束 */
+});
 
-   $('a.btnTologIn').click(function(e){
-     e.preventDefault();
-       $('form#signUpForm').hide();
-       $('form#logInForm').show();
-   });
-   $('a.btnTosignUp').click(function(e){
-     e.preventDefault();
-       $('form#signUpForm').show();
-       $('form#logInForm').hide();
-   });
+$('a.btnTologIn').click(function(e){
+	e.preventDefault();
+	$('form#signUpForm').hide();
+	$('form#logInForm').show();
+});
+$('a.btnTosignUp').click(function(e){
+	e.preventDefault();
+	$('form#signUpForm').show();
+	$('form#logInForm').hide();
+});
 </script>
+
 
 <!-- Script to Activate the Carousel -->
 <script>
-    $('.carousel').carousel({
+	$('.carousel').carousel({
         interval: 5000 //changes the speed
     })
+	trendChoose($('#trendChoose').val());
+   // FB Share
+   $('#FB_share').click(function(){
+   	FB.ui({
+   		display: 'popup',
+   		method: 'feed',
+   		link: 'http://vipl.noip.me:10080/Water',
+   		description: 'We are team7 from 1032_Software Engineering of NCCU. Our purpose of project is to assist citizens in focusing on Water resource of reservoir in Taiwan',
+   		caption: 'We are team7 from 1032_Software Engineering of NCCU. Our purpose of project is to assist citizens in focusing on Water resource of reservoir in Taiwan',
+   	}, function(response){});return false;}
+   	);
+</script>
+<script type="text/javascript">
+	var apiServer = 'https://query.yahooapis.com/v1/public/yql';
+	
+	var list  = [
+	"clear-day", "clear-night", "partly-cloudy-day",
+	"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+	"fog"] ;
+
+	var return_skyicon = function(code)
+	{
+		switch(code)
+		{
+			case 31:
+			return list[0] ;
+			break;
+			case 32:
+			return list[0] ;
+			break;
+			case 36:
+			return list[0] ;
+			break;
+			case 34:
+			return list[0] ;
+			break;
+			case 35:
+			return list[0] ;
+			break;
+			case 37:
+			return list[0] ;
+			break;
+			case 38:
+			return list[0] ;
+			break;
+			case 39:
+			return list[0] ;
+			break;
+			case 40:
+			return list[0] ;
+			break;
+			case 45:
+			return list[0] ;
+			break;
+			case 46:
+			return list[0] ;
+			break;
+			case 47:
+			return list[0] ;
+			break;
+			case 33:
+			return list[1] ;
+			break;
+			case 30:
+			return list[2] ;
+			break;
+			case 44:
+			return list[2] ;
+			break;
+			case 29:
+			return list[3] ;
+			break;
+			case 26:
+			return list[4] ;
+			break;
+			case 27:
+			return list[4] ;
+			break;
+			case 28:
+			return list[4] ;
+			break;
+			case 11:
+			return list[5] ;
+			break;
+			case 12:
+			return list[5] ;
+			break;
+			case 18:
+			return list[6] ;
+			break;
+			case 13:
+			return list[7] ;
+			break;
+			case 41:
+			return list[7] ;
+			break;
+			case 42:
+			return list[7] ;
+			break;
+			case 43:
+			return list[7] ;
+			break;
+			case 24:
+			return list[8] ;
+			break;
+			case 20:
+			return list[9] ;
+			break;
+			default :
+			return list[2];
+		}
+
+	}
+
+
+	function getweather(cityName){
+		
+		var queryString = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + cityName + '")';
+
+
+		$.ajax({
+			url: apiServer,
+			data: {
+				format: 'json',
+				q: queryString,
+			},
+			success: function(data) {
+				console.log(data.query.results);
+				
+				var temperature = data.query.results.channel.item.condition.temp;
+				temperature= (temperature-32)*5/9;
+				temperature=Math.round(temperature);
+				document.getElementById("today_temp").innerHTML =temperature;
+				
+				document.getElementById("today_date").innerHTML =data.query.results.channel.item.condition.date;
+				document.getElementById("today_weather").innerHTML =data.query.results.channel.item.condition.text;
+
+				document.getElementById("one").innerHTML =data.query.results.channel.item.forecast[1].date;
+				document.getElementById("two").innerHTML =data.query.results.channel.item.forecast[2].date;
+				document.getElementById("three").innerHTML =data.query.results.channel.item.forecast[3].date;
+
+				document.getElementById("one_high").innerHTML =Math.round((data.query.results.channel.item.forecast[1].high-32)*5/9);
+				document.getElementById("two_high").innerHTML =Math.round((data.query.results.channel.item.forecast[2].high-32)*5/9);
+				document.getElementById("three_high").innerHTML =Math.round((data.query.results.channel.item.forecast[3].high-32)*5/9);
+
+				document.getElementById("one_low").innerHTML =Math.round((data.query.results.channel.item.forecast[1].low-32)*5/9);
+				document.getElementById("two_low").innerHTML =Math.round((data.query.results.channel.item.forecast[2].low-32)*5/9);
+				document.getElementById("three_low").innerHTML =Math.round((data.query.results.channel.item.forecast[3].low-32)*5/9);
+
+				var skycons = new Skycons();
+				
+				today_weather = (data.query.results.channel.item.condition.text).toLowerCase();
+				
+				var today_weather_code = data.query.results.channel.item.condition.code ;
+				var one_weather_code = data.query.results.channel.item.forecast[1].code;
+				var two_weather_code = data.query.results.channel.item.forecast[2].code;
+				var three_weather_code = data.query.results.channel.item.forecast[3].code;
+
+				skycons.add("today",return_skyicon(Number(today_weather_code)));
+				console.log(today_weather_code);
+				
+				skycons.add("day1", return_skyicon(Number(one_weather_code)));
+				console.log(one_weather_code);
+				
+				skycons.add("day2", return_skyicon(Number(two_weather_code)));
+				console.log(two_weather_code);
+
+				skycons.add("day3", return_skyicon(Number(three_weather_code)));
+				console.log(three_weather_code);
+				
+          // start animation!
+          skycons.play(); 
+      }
+  });
+};
+/*
+Get value from Bootstrap dropdown menu
+*/
+$('#dropdown li').on('click', function(){
+    //alert($(this).text());
+    console.log($(this).text());
+    document.getElementById("my_city").innerHTML = ($(this).text());
+    getweather($(this).text());
+});
+
+$('#dropdown :first').click();
+
 </script>
 
 </body>
 
 </html>
+
+
