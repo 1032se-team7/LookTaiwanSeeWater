@@ -191,10 +191,10 @@
 						<button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
 							<p id="my_city"></p> <span class="caret"></span>
 						</button>
-						<ul id="dropdown" class="dropdown-menu" role="menu">  
+						<ul id="dropdown" class="dropdown-menu" role="menu">
 							<li role="presentation"><a role="menuitem" tabindex="-1" >臺北市</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" >新北市</a></li> 
-							<li role="presentation"><a role="menuitem" tabindex="-1" >台中市</a></li> 
+							<li role="presentation"><a role="menuitem" tabindex="-1" >新北市</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" >台中市</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >臺南市</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >高雄市</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >基隆市</a></li>
@@ -207,12 +207,12 @@
 							<li role="presentation"><a role="menuitem" tabindex="-1" >雲林縣</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >嘉義市</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >嘉義縣</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" >屏東縣</a></li> 
+							<li role="presentation"><a role="menuitem" tabindex="-1" >屏東縣</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >宜蘭縣</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >花蓮縣</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >台東縣</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >澎湖縣</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" >金門縣</a></li> 
+							<li role="presentation"><a role="menuitem" tabindex="-1" >金門縣</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" >連江縣</a></li>
 						</ul>
 					</div>
@@ -1046,16 +1046,9 @@
                       // }
                       var forappend = "<tr><td>水庫名稱</td><td>水庫目前有效蓄水量(萬立方公尺)</td><td>水庫目前蓄水量百分比(%)</td><td>水情更新時間</td></tr>";
                       for(var i=0; i<10; i++){
-<<<<<<< HEAD
-                          if(UserReservoir[0].get('res'+i)==="true"){
-                            forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+" % </th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
-                          }
-=======
                       	if(UserReservoir[0].get('res'+i)==="true"){
                       		forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+"</th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
                       	}
-
->>>>>>> 568890e2ce2dccd73e5a1a6acf68fc808331c7d2
                       }
                       $('table.table').html(forappend);
                   }
@@ -1092,7 +1085,6 @@ $(document).ready(function() {
     	$('div#logOut').hide();
     	$('div#updateSubscribe').hide();
     // }
-<<<<<<< HEAD
 
     // statistic users account
     var SignReservoir = Parse.Object.extend("SignReservoir");
@@ -1135,7 +1127,7 @@ $(document).ready(function() {
                   var AllInfo = AllInfo || [];
                   AllInfo.push(PersonalInfo);
                 }
-                // console.log(AllInfo);
+                 console.log(AllInfo);
             }
           // End of $.ajax
           });
@@ -1143,9 +1135,6 @@ $(document).ready(function() {
       // End of query.find
     });
   });
-=======
-});
->>>>>>> 568890e2ce2dccd73e5a1a6acf68fc808331c7d2
 
 //Logout user account
 $(document).on('click',"div#logOut",function(){
@@ -1172,7 +1161,6 @@ $(document).on('click',"div#updateSubscribe",function(){
     	success: function(result) {
             // if (result.length == 0) {
             //   //Not Found
-<<<<<<< HEAD
               Parse.Object.destroyAll(result);
               var SignReservoir = Parse.Object.extend("SignReservoir");
               var newReservoir = new SignReservoir();
@@ -1197,31 +1185,6 @@ $(document).on('click',"div#updateSubscribe",function(){
                   console.log('reservoir error', error.message);
                 }
               });
-=======
-            Parse.Object.destroyAll(result);
-            var SignReservoir = Parse.Object.extend("SignReservoir");
-            var newReservoir = new SignReservoir();
-
-            newReservoir.set("username", currentUser.get("username"));
-            for(var i=0; i<10; i++){
-            	var string1="input#res";
-            	var string2="res";
-            	if($(string1+i).prop("checked"))
-            		newReservoir.set(string2+i, "true");
-            	else
-            		newReservoir.set(string2+i, "false");
-            }
-
-            newReservoir.save(null, {
-            	success: function(attend) {
-            		console.log('reservoir signed');
-            	},
-            	error: function(attend, error) {
-            		alert(error);
-            		console.log('reservoir error', error.message);
-            	}
-            });
->>>>>>> 568890e2ce2dccd73e5a1a6acf68fc808331c7d2
 
             var SignReservoir = Parse.Object.extend("SignReservoir");
             var query = new Parse.Query(SignReservoir);
@@ -1247,16 +1210,9 @@ $(document).on('click',"div#updateSubscribe",function(){
                           // }
                           var forappend = "<tr><td>水庫名稱</td><td>水庫目前有效蓄水量(萬立方公尺)</td><td>水庫目前蓄水量百分比(%)</td><td>水情更新時間</td></tr>";
                           for(var i=0; i<10; i++){
-<<<<<<< HEAD
-                              if(UserReservoir[0].get('res'+i)==="true"){
-                                forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+" % </th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
-                              }
-=======
                           	if(UserReservoir[0].get('res'+i)==="true"){
                           		forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+"</th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
                           	}
-
->>>>>>> 568890e2ce2dccd73e5a1a6acf68fc808331c7d2
                           }
                           $('table.table').html(forappend);
                       }
@@ -1335,7 +1291,7 @@ $('a.btnTosignUp').click(function(e){
 </script>
 <script type="text/javascript">
 	var apiServer = 'https://query.yahooapis.com/v1/public/yql';
-	
+
 	var list  = [
 	"clear-day", "clear-night", "partly-cloudy-day",
 	"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
@@ -1437,7 +1393,7 @@ $('a.btnTosignUp').click(function(e){
 
 
 	function getweather(cityName){
-		
+
 		var queryString = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + cityName + '")';
 
 
@@ -1449,12 +1405,12 @@ $('a.btnTosignUp').click(function(e){
 			},
 			success: function(data) {
 				console.log(data.query.results);
-				
+
 				var temperature = data.query.results.channel.item.condition.temp;
 				temperature= (temperature-32)*5/9;
 				temperature=Math.round(temperature);
 				document.getElementById("today_temp").innerHTML =temperature;
-				
+
 				document.getElementById("today_date").innerHTML =data.query.results.channel.item.condition.date;
 				document.getElementById("today_weather").innerHTML =data.query.results.channel.item.condition.text;
 
@@ -1471,9 +1427,9 @@ $('a.btnTosignUp').click(function(e){
 				document.getElementById("three_low").innerHTML =Math.round((data.query.results.channel.item.forecast[3].low-32)*5/9);
 
 				var skycons = new Skycons();
-				
+
 				today_weather = (data.query.results.channel.item.condition.text).toLowerCase();
-				
+
 				var today_weather_code = data.query.results.channel.item.condition.code ;
 				var one_weather_code = data.query.results.channel.item.forecast[1].code;
 				var two_weather_code = data.query.results.channel.item.forecast[2].code;
@@ -1481,18 +1437,18 @@ $('a.btnTosignUp').click(function(e){
 
 				skycons.add("today",return_skyicon(Number(today_weather_code)));
 				console.log(today_weather_code);
-				
+
 				skycons.add("day1", return_skyicon(Number(one_weather_code)));
 				console.log(one_weather_code);
-				
+
 				skycons.add("day2", return_skyicon(Number(two_weather_code)));
 				console.log(two_weather_code);
 
 				skycons.add("day3", return_skyicon(Number(three_weather_code)));
 				console.log(three_weather_code);
-				
+
           // start animation!
-          skycons.play(); 
+          skycons.play();
       }
   });
 };
@@ -1513,5 +1469,3 @@ $('#dropdown :first').click();
 </body>
 
 </html>
-
-

@@ -14,6 +14,7 @@ var path = require('path'),
   var SignReservoir = Parse.Object.extend("SignReservoir");
   var query = new Parse.Query(SignReservoir);
 
+module.exports = function(){
   query.find({
     success: function(UserReservoir){
 
@@ -60,6 +61,7 @@ var path = require('path'),
     }
 
   });
+};
 
 function RandomString() {
   var text = "";
