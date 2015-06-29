@@ -212,7 +212,7 @@ function makeChart (data, markers) {
     .domain(d3.extent(data, function (d) { return d.date; })),
     y = d3.scale.linear().range([chartHeight, 0])
     // .domain([data[0].pct50/10*10-10, d3.max(data, function (d) { return d.pct95; })]);
-        .domain([data[0].pct50/10*10-10, data[0].pct50/10*10+10]);
+    .domain([data[0].pct50/10*10-10, data[0].pct50/10*10+10]);
 
     var xAxis = d3.svg.axis().scale(x).orient('bottom')
     .innerTickSize(-chartHeight).outerTickSize(0).tickPadding(10),
@@ -237,51 +237,9 @@ function makeChart (data, markers) {
     startTransitions(svg, chartWidth, chartHeight, rectClip, markers, x);
 }
 
-//makeChart(testData, testMarker);
 
-// var trendChartChoose = document.getElementById('trendChoose').value;
-// console.log(trendChartChoose);
-// var parseDate  = d3.time.format('%Y-%m-%d').parse;
-// d3.json('/chart', function (error, rawData) {
-//         if (error) {
-//         console.error(error);
-//         return;
-//         }
-
-//         var data = rawData.map(function (d) {
-
-//                                return {
-//                               //date:  parseDate(d.concentration),
-//                               //pct50: parseFloat(d.immediateLevel)
-//                                date:  parseDate(d.date),
-//                                pct05: d.石門水庫 /1,
-//                                pct50: d.trendChartChoose /1,
-//                                pct25: d.寶山第二水庫 /1,
-//                                pct75: d.永和山水庫 /1,
-//                                pct95: d.明德水庫 /1,
-//                                };
-//                                });
-//         console.log(data);
-
-//         d3.json('trendChartMarker.json', function (error, markerData) {
-//                 if (error) {
-//                 console.error(error);
-//                 return;
-//                 }
-
-//                 var markers = markerData.map(function (marker) {
-//                                              return {
-//                                              date: parseDate(marker.date),
-//                                              type: marker.type,
-//                                              version: marker.version
-//                                              };
-//                                              });
-
-//                 makeChart(data, markers);
-//                 });
-//         });
 function trendChoose(trendChartChoose){
-console.log(trendChartChoose);
+    console.log(trendChartChoose);
     var parseDate  = d3.time.format('%Y-%m-%d').parse;
     $('.trendChart').html('');
     d3.json('/chart', function (error, rawData) {
@@ -350,18 +308,15 @@ console.log(trendChartChoose);
               choose = d.石門水庫;              
           }
           return {
+              date:  parseDate(d.date),
+              pct05: d.石門水庫 /1,
 
-                              //date:  parseDate(d.concentration),
-                              //pct50: parseFloat(d.immediateLevel)
-                              date:  parseDate(d.date),
-                              pct05: d.石門水庫 /1,
-                              
-                              pct50: choose /1,
-                              pct25: d.寶山第二水庫 /1,
-                              pct75: d.永和山水庫 /1,
-                              pct95: d.明德水庫 /1,
-                          };
-                      });
+              pct50: choose /1,
+              pct25: d.寶山第二水庫 /1,
+              pct75: d.永和山水庫 /1,
+              pct95: d.明德水庫 /1,
+          };
+      });
 console.log(data);
 
 d3.json('trendChartMarker.json', function (error, markerData) {
@@ -371,12 +326,12 @@ d3.json('trendChartMarker.json', function (error, markerData) {
     }
 
     var markers = markerData.map(function (marker) {
-     return {
-         date: parseDate(marker.date),
-         type: marker.type,
-         version: marker.version
-     };
- });
+       return {
+           date: parseDate(marker.date),
+           type: marker.type,
+           version: marker.version
+       };
+   });
 
     makeChart(data, markers);
 });
