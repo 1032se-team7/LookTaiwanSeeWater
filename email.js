@@ -2,6 +2,64 @@ var path = require('path'),
   templatesDir = path.resolve(__dirname, '.', 'templates'),
   emailTemplates = require('email-templates'),
   nodemailer = require('nodemailer');
+  fs = require('fs');
+  moment = require('moment');
+
+
+  var Parse = require('parse').Parse;
+
+  Parse.initialize("OBdeSxCsdErRrtcR3noBsYF5lYqPiO3FEXu8pMoo", "swRXApGLL4mq6Qht0clQj4u6kh6mrcafmNleJQmy");
+
+  // statistic users account
+  var SignReservoir = Parse.Object.extend("SignReservoir");
+  var query = new Parse.Query(SignReservoir);
+
+  query.find({
+    success: function(UserReservoir){
+
+      for(var i=0; i<UserReservoir.length; i++){
+        var PersonalInfo = {
+            name: UserReservoir[i].get('username'),
+            email: UserReservoir[i].get('email'),
+            res0: UserReservoir[i].get('res0'),
+            res1: UserReservoir[i].get('res1'),
+            res2: UserReservoir[i].get('res2'),
+            res3: UserReservoir[i].get('res3'),
+            res4: UserReservoir[i].get('res4'),
+            res5: UserReservoir[i].get('res5'),
+            res6: UserReservoir[i].get('res6'),
+            res7: UserReservoir[i].get('res7'),
+            res8: UserReservoir[i].get('res8'),
+            res9: UserReservoir[i].get('res9')
+            };
+        var AllInfo = AllInfo || [];
+        AllInfo.push(PersonalInfo);
+      }
+
+      console.log(AllInfo);
+      var today = moment().format('YYYY-MM-DD');
+      fs.readFile('./data/' + today, function(err, data) {
+        if (err) return;
+
+        data = JSON.parse(data);
+        var d = [];
+        // for(var i=0;i<data.length;i++)
+        // {
+        //   d.push(data[i].immediatePercentage);
+        //   if(data[i].immediatePercentage < 50)
+        //   {
+        //
+        //   }
+        // }
+
+        for(var i=0;i<AllInfo.length;i++)
+        {
+          email(AllInfo[i].email);
+        }
+      });
+    }
+
+  });
 
 function RandomString() {
   var text = "";
@@ -13,8 +71,8 @@ function RandomString() {
   return text;
 }
 
-module.exports = function() {
-  emailTemplates(templatesDir, function(err, template) {
+function email(user) {
+emailTemplates(templatesDir, function(err, template) {
 
     if (err) {
       console.log(err);
@@ -31,11 +89,7 @@ module.exports = function() {
       // An example users object
       var count = 0;
       var users = [{
-          email: 'seal789ie@gmail.com',
-          name: {
-            first: 'Pappa',
-            last: 'Pizza'
-          },
+          email: user,
           content: RandomString()
         }
         /*, {

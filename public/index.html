@@ -417,7 +417,7 @@
                       </div>
 
                       <!-- Role -->
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <label class="col-md-4 control-label" for="">角色*</label>
                         <div class="col-md-4">
                           <label class="radio-inline" for="-0">
@@ -429,7 +429,7 @@
                             訂閱者
                           </label>
                         </div>
-                      </div>
+                      </div> -->
 
                       <!-- Button -->
                       <div class="form-group">
@@ -479,7 +479,7 @@
                       </fieldset>
                       </form>
 
-                      <h3 id="logAttend">你是已經簽到的：<span id="name"></span></h3>
+                      <h3 id="logAttend">你是已經登入的：<span id="name"></span></h3>
                       <div id="logOut" class="btn btn-danger">登出</div>
 
                       <div class="reservoir-table">
@@ -730,6 +730,29 @@
           $('div#updateSubscribe').show();
 
 
+          var SignReservoir = Parse.Object.extend("SignReservoir");
+          var newReservoir = new SignReservoir();
+
+          newReservoir.set("username", currentUser.get("username"));
+          newReservoir.set("email", currentUser.get("email"));
+          for(var i=0; i<10; i++){
+            var string1="input#res";
+            var string2="res";
+            if($(string1+i).prop("checked"))
+              newReservoir.set(string2+i, "true");
+            else
+              newReservoir.set(string2+i, "false");
+          }
+
+          newReservoir.save(null, {
+            success: function(attend) {
+              console.log('reservoir signed');
+            },
+            error: function(attend, error) {
+              alert(error);
+              console.log('reservoir error', error.message);
+            }
+          });
           // 提示3 : 簽到成功後，要將畫面切換到 index 頁面
           alert('您已登入成功，請選擇您想訂閱的水庫或將顯示已訂閱的所有水庫！');
           //window.location = 'index.html';
@@ -758,9 +781,8 @@
                       var forappend = "<tr><td>水庫名稱</td><td>水庫目前有效蓄水量(萬立方公尺)</td><td>水庫目前蓄水量百分比(%)</td><td>水情更新時間</td></tr>";
                       for(var i=0; i<10; i++){
                           if(UserReservoir[0].get('res'+i)==="true"){
-                            forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+"</th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
+                            forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+" % </th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
                           }
-
                       }
                       $('table.table').html(forappend);
                   }
@@ -797,6 +819,55 @@
       $('div#logOut').hide();
       $('div#updateSubscribe').hide();
     // }
+
+    // statistic users account
+    var SignReservoir = Parse.Object.extend("SignReservoir");
+    var query = new Parse.Query(SignReservoir);
+
+    query.find({
+      success: function(UserReservoir){
+        $.ajax({
+            type: "GET",
+            url: "/data",
+            dataType: "json",
+            success: function (data) {
+                var reservoirData = data.data;
+
+                for(var i=0; i<UserReservoir.length; i++){
+                  var PersonalInfo = {
+                      name: UserReservoir[i].get('username'),
+                      email: UserReservoir[i].get('email'),
+                      res0: UserReservoir[i].get('res0'),
+                      resPercent0: reservoirData[0].immediatePercentage,
+                      res1: UserReservoir[i].get('res1'),
+                      resPercent1: reservoirData[1].immediatePercentage,
+                      res2: UserReservoir[i].get('res2'),
+                      resPercent2: reservoirData[2].immediatePercentage,
+                      res3: UserReservoir[i].get('res3'),
+                      resPercent3: reservoirData[3].immediatePercentage,
+                      res4: UserReservoir[i].get('res4'),
+                      resPercent4: reservoirData[4].immediatePercentage,
+                      res5: UserReservoir[i].get('res5'),
+                      resPercent5: reservoirData[5].immediatePercentage,
+                      res6: UserReservoir[i].get('res6'),
+                      resPercent6: reservoirData[6].immediatePercentage,
+                      res7: UserReservoir[i].get('res7'),
+                      resPercent7: reservoirData[7].immediatePercentage,
+                      res8: UserReservoir[i].get('res8'),
+                      resPercent8: reservoirData[8].immediatePercentage,
+                      res9: UserReservoir[i].get('res9'),
+                      resPercent9: reservoirData[9].immediatePercentage
+                      };
+                  var AllInfo = AllInfo || [];
+                  AllInfo.push(PersonalInfo);
+                }
+                // console.log(AllInfo);
+            }
+          // End of $.ajax
+          });
+      }
+      // End of query.find
+    });
   });
 
 //Logout user account
@@ -829,6 +900,7 @@
               var newReservoir = new SignReservoir();
 
               newReservoir.set("username", currentUser.get("username"));
+              newReservoir.set("email", currentUser.get("email"));
               for(var i=0; i<10; i++){
                 var string1="input#res";
                 var string2="res";
@@ -873,9 +945,8 @@
                           var forappend = "<tr><td>水庫名稱</td><td>水庫目前有效蓄水量(萬立方公尺)</td><td>水庫目前蓄水量百分比(%)</td><td>水情更新時間</td></tr>";
                           for(var i=0; i<10; i++){
                               if(UserReservoir[0].get('res'+i)==="true"){
-                                forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+"</th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
+                                forappend += "<tr><th>"+$('label.res'+i).text()+"</th><th>"+reservoirData[i].immediateStorage+"</th><th>"+reservoirData[i].immediatePercentage+" % </th><th>"+reservoirData[i].lastedUpdateTime+"</th></tr>";
                               }
-
                           }
                           $('table.table').html(forappend);
                       }
